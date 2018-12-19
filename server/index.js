@@ -45,7 +45,9 @@ app.prepare().then(() => {
 	};
 
 	// Routes
-	//server.get('/custom', customRequestHandler.bind(undefined, '/custom-page'));
+	server.get('/hello', (req, res, next) => {
+		res.send("Well, hello there")
+	});
 	server.get('/', customRequestHandler.bind(undefined, '/'));
 	server.get('*', defaultRequestHandler);
 
